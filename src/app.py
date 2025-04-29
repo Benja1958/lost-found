@@ -98,7 +98,7 @@ def get_or_create_user_route():
 
     user = get_or_create_user(name, email, phone_number)
 
-    return success_response(user.serialize(), 200)
+    return success_response(user.serialize(), 201)
 
 
 def get_or_create_user(name, email, phone_number):
