@@ -53,7 +53,7 @@ class FoundItem(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user = db.relationship("User", back_populates="found_items")
 
-    def __init__(self, kwargs):
+    def __init__(self, **kwargs):
         """
         Initialize found_items
         """
@@ -61,6 +61,7 @@ class FoundItem(db.Model):
         self.location = kwargs.get("location")
         self.date_found = kwargs.get("date_found")
         self.image_url = kwargs.get("image_url")
+        self.user_id = kwargs.get("user_id")
 
 
     def serialize(self):
